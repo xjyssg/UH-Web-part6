@@ -1,5 +1,5 @@
 import React from 'react'
-import NewAnecdote from './components/NewAnecdote'
+import AnecdoteForm from './components/AnecdoteForm'
 import DisplayAnecdotes from './components/DisplayAnecdotes'
 
 
@@ -9,7 +9,7 @@ const App = () => {
       <h2>Anecdotes</h2>
       <DisplayAnecdotes />
       <h2>create new</h2>
-      <NewAnecdote />
+      <AnecdoteForm />
     </div>
   )
 }
