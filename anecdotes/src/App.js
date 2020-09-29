@@ -1,12 +1,9 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 import NewAnecdote from './components/NewAnecdote'
 import DisplayAnecdotes from './components/DisplayAnecdotes'
 
-const App = () => {
-  const anecdotes = useSelector(state => state)
-  const dispatch = useDispatch()
 
+const App = () => {
   return (
     <div>
       <h2>Anecdotes</h2>
