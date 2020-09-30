@@ -5,7 +5,10 @@ import {showNotification, hideNotification} from '../reducers/notificationReduce
 
 
 const AnecdoteList = () => {
-    const anecdotes = useSelector(state => state.anecdotes)
+    const filter = useSelector(state => state.filter)
+    const anecdotes = useSelector(state => state.anecdotes.filter(
+      anecdote => anecdote.content.indexOf(filter) !== -1
+    ))
     const dispatch = useDispatch()
     const orderedAnecdotes = anecdotes.sort((anecdote1, anecdote2) => anecdote2.votes - anecdote1.votes)
 
