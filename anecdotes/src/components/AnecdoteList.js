@@ -13,7 +13,8 @@ const AnecdoteList = () => {
     const orderedAnecdotes = anecdotes.sort((anecdote1, anecdote2) => anecdote2.votes - anecdote1.votes)
 
     const voteHandler = (anecdote) => {
-      dispatch(increaseVote(anecdote.id))
+      dispatch(increaseVote(anecdote))
+      
       dispatch(showNotification(anecdote.content))
       setTimeout(() => {
         dispatch(hideNotification())
