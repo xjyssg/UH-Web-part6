@@ -21,17 +21,21 @@ export const hideNotification = () => {
   }
 }
 
-export const setNotification = (content, time) => {
-  const delay = ms => new Promise(resolve => setTimeout(resolve, ms * 1000))
+var timeID
 
+export const setNotification = (content, time) => {
   return async dispatch => {
+    clearTimeout(timeID)
+    const timeout = (ms) => {
+      return new Promise(resolve => {
+        timeID = setTimeout(resolve, ms * 1000)
+      });
+    }
     dispatch({
       type: 'SET',
       data: content
     })
-    
-    await delay(time)
-
+    await timeout(time)
     dispatch({
       type: 'SET',
       data: ''

@@ -18,7 +18,7 @@ const AnecdoteList = (props) => {
               has {anecdote.votes}
               <button onClick={() => {
                 props.increaseVote(anecdote)
-                props.setNotification(`you voted '${anecdote.content}'`, 2)
+                props.setNotification(`you voted '${anecdote.content}'`, 5)
               }}>vote</button>
               </div>
             </div>
